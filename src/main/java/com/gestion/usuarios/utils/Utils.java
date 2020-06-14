@@ -1,6 +1,10 @@
 package com.gestion.usuarios.utils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import com.commons.utils.Data;
 
 public class Utils {
 	
@@ -32,5 +36,12 @@ public class Utils {
 			dateResult = dateBBDD;
 		}
 		return dateResult;
+	}
+	
+	public static String getFechaActual() {
+		Date date = new Date();
+		//Caso 2: obtener la fecha y salida por pantalla con formato:
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		return dateFormat.format(date);
 	}
 }
